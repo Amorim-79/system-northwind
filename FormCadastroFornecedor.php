@@ -2,11 +2,7 @@
 
 <form action="CadastroDados.php" method="post">
     <div class="row LinhaForm">
-        <div class="col-lg-5">
-            <label>Id do Cliente: </label>
-            <input type="text" name="HTML_idCliente" class="form-control" maxlength="5">
-        </div>
-        <div class="col-lg-7">
+        <div class="col-lg-12">
             <label>Nome da Empresa: </label>
             <input type="text" name="HTML_nomeEmpresa" class="form-control" maxlength="40">
         </div>
@@ -56,8 +52,8 @@
         </div>
     </div>
     <div class="row LinhaForm">
-        <div class="col-lg-12">
-                <input type="hidden" name="tabela" value="customers">
+        <div class="col-lg-12">  
+                <input type="hidden" name="tabela" value="suppliers">
                 <button type="submit" class="btn btn-dark float-right">Cadastrar Cliente</button>            
         </div>
     </div>

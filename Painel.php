@@ -268,10 +268,14 @@
                     //Funcionários
                     $tabela = "employees";
                     include "Lista.php";
+                } else if ($idPg == 22) {
+                    include "FormCadastroFuncionario.php";
                 } else if ($idPg == 30) {
                     //Fornecedores
                     $tabela = "suppliers";
                     include "Lista.php";
+                } else if ($idPg == 32) {
+                    include "FormCadastroFornecedor.php";
                 } else if ($idPg == 40) {
                     //Transportadoras
                     $tabela = "shippers";

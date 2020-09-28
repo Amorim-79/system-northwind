@@ -280,6 +280,8 @@
                     //Transportadoras
                     $tabela = "shippers";
                     include "Lista.php";
+                } else if ($idPg == 42) {
+                    include "FormCadastroTransportadora.php";
                 } else if ($idPg == 50) {
                     //Estoque
                     $tabela = "products";
@@ -290,6 +292,8 @@
                     //Vendas
                     $tabela = "orders";
                     include "Lista.php";
+                } else if ($idPg == 62) {
+                    include "FormCadastroVenda.php";
                 }
 
                 

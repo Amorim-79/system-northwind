@@ -73,8 +73,8 @@
     </div>
     <div class="row LinhaForm">
         <div class="col-lg-12">  
-                <input type="hidden" name="tabela" value="suppliers">
-                <button type="submit" class="btn btn-dark float-right">Cadastrar Cliente</button>            
+                <input type="hidden" name="tabela" value="employees">
+                <button type="submit" class="btn btn-dark float-right">Cadastrar Funcionário</button>            
         </div>
     </div>
 </form>

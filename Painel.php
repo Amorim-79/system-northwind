@@ -262,18 +262,22 @@
                     include "Lista.php";
                 } else if($idPg == 11){
                     include "InfoCliente.php";
-                }else if ($idPg == 12){                    
+                } else if ($idPg == 12){                    
                     include "FormCadastroCliente.php";
-                }else if ($idPg == 20) {
+                } else if ($idPg == 20) {
                     //Funcionários
                     $tabela = "employees";
                     include "Lista.php";
+                } else if ($idPg == 21) {
+                    include "InfoFuncionario.php";
                 } else if ($idPg == 22) {
                     include "FormCadastroFuncionario.php";
                 } else if ($idPg == 30) {
                     //Fornecedores
                     $tabela = "suppliers";
                     include "Lista.php";
+                } else if ($idPg == 31) {
+                    include "InfoFornecedor.php";
                 } else if ($idPg == 32) {
                     include "FormCadastroFornecedor.php";
                 } else if ($idPg == 40) {
@@ -286,7 +290,9 @@
                     //Estoque
                     $tabela = "products";
                     include "Lista.php";
-                }else if ($idPg == 52){
+                } else if ($idPg == 51) {
+                    include "InfoProduto.php";
+                } else if ($idPg == 52){
                     include "FormCadastroProduto.php";
                 } else if ($idPg == 60) {
                     //Vendas

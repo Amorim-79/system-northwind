@@ -45,7 +45,7 @@ while($campos = mysqli_fetch_array($rsCampos)){
                     if($i <= 1){ //duas primeiras col (0 e 1)
             ?>
                 <td>
-                    <a href="?idPg=11&idCli=<?=$dadosLista[0];?>" class="LinkDados">
+                    <a href="?idPg=<?=$idPg + 1;?>&tbl=<?=$tabela;?>&column=<?=$nomeCampos[0];?>&id=<?=$dadosLista[0];?>" class="LinkDados">
                         <?=$dadosLista[$i];?>
                     </a>
                 </td>

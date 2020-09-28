@@ -1,8 +1,10 @@
 <?php
-$idCli = $_GET['idCli']; //objeto GET acessa o valor de uma variavel passada via URL
+$id = $_GET['id']; //objeto GET acessa o valor de uma variavel passada via URL
+$tbl = $_GET['tbl']; //objeto GET acessa o valor de uma variavel passada via URL
+$column = $_GET['column']; //objeto GET acessa o valor de uma variavel passada via URL
 
-$rsCliente = consultarCliente($vConn, $idCli); //chamando metodo que retorna dados do cliente selecionado
-$rsVenda = listarVendas($vConn, $idCli); //chamando metodo que retorna dados do cliente selecionado
+$rsCliente = consultarPorId($vConn, $tbl, $column, $id); //chamando metodo que retorna dados do cliente selecionado
+$rsVenda = listarVendasCliente($vConn, $id); //chamando metodo que retorna dados do cliente selecionado
 
 $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibição dos dados
 ?>
@@ -23,7 +25,7 @@ $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibiç
                 Representante: <?= $tblCliente['ContactName'] ?><br>
                 Cargo: <?= $tblCliente['ContactTitle'] ?><br>
                 Telefone: <?= $tblCliente['Phone'] ?><br>
-                Fax: <?= $tblCliente['ContactTitle'] ?><br>
+                Fax: <?= $tblCliente['Fax'] ?><br>
             </div>
 
             <div class="col-lg-6">

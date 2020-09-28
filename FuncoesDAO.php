@@ -44,8 +44,8 @@ return $rsDados;
 
 /*----------------------------------------------------------------------------*/
 
-function consultarCliente($vConn, $idCli){
-    $sqlCliente = "Select * from customers where CustomerId like '$idCli'";    
+function consultarPorId($vConn, $tbl, $column, $id){
+    $sqlCliente = "Select * from $tbl where $column like '$id'";    
     $rsCliente = mysqli_query($vConn, $sqlCliente) or die(mysqli_error($vConn));
     
     return $rsCliente;
@@ -53,8 +53,17 @@ function consultarCliente($vConn, $idCli){
 
 /*----------------------------------------------------------------------------*/
 
-function listarVendas($vConn, $idCli){
-    $sqlVendas = "Select * from orders O, employees E, Shippers S where O.CustomerId like '$idCli' and O.EmployeeID = E.EmployeeID and O.ShipVia = S.ShipperID";    
+function listarVendasCliente($vConn, $id){
+    $sqlVendas = "Select * from orders O, employees E, Shippers S where O.CustomerId like '$id' and O.EmployeeID = E.EmployeeID and O.ShipVia = S.ShipperID";    
+    $rsVendas = mysqli_query($vConn, $sqlVendas) or die(mysqli_error($vConn));
+    
+    return $rsVendas;
+    
+}
+/*----------------------------------------------------------------------------*/
+
+function listarVendasFuncionario($vConn, $id){
+    $sqlVendas = "Select * from orders O, employees E, Shippers S where O.EmployeeID like '$id' and O.EmployeeID = E.EmployeeID and O.ShipVia = S.ShipperID";    
     $rsVendas = mysqli_query($vConn, $sqlVendas) or die(mysqli_error($vConn));
     
     return $rsVendas;

@@ -69,7 +69,26 @@ function listarVendasFuncionario($vConn, $id){
     return $rsVendas;
     
 }
+
 /*----------------------------------------------------------------------------*/
+function listarProdutosFornecedor($vConn, $id){
+    $sqlVendas = "Select * from products where SupplierID like '$id'";    
+    $rsVendas = mysqli_query($vConn, $sqlVendas) or die(mysqli_error($vConn));
+    
+    return $rsVendas;
+    
+}
+
+/*----------------------------------------------------------------------------*/
+function listarFornecedoresProduto($vConn, $id){
+    $sqlVendas = "SELECT * FROM suppliers  INNER JOIN products ON products.SupplierID = suppliers.SupplierID WHERE ProductID = $id";    
+    $rsVendas = mysqli_query($vConn, $sqlVendas) or die(mysqli_error($vConn));
+    
+    return $rsVendas;
+    
+}
+/*----------------------------------------------------------------------------*/
+
 function calcularCompra($vConn, $idVenda){
     $sqlTotal = "SELECT sum(OD.UnitPrice * OD.Quantity) as total FROM Orderdetails OD,";
     $sqlTotal .= "Orders O where OD.orderid = O.orderid and O.orderid = $idVenda";

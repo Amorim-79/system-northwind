@@ -11,7 +11,7 @@ $tblProduto = mysqli_fetch_array($rsProduto); //abrindo o resultset para exibiç
 
 <div class="row">
     <div class="col-lg-2">
-        <img src="img/user.jpg" class="img-thumbnail">
+        <img src="img/img-product.jpg" class="img-thumbnail">
     </div>
 
     <div class="col-lg-10">
@@ -38,7 +38,7 @@ $tblProduto = mysqli_fetch_array($rsProduto); //abrindo o resultset para exibiç
 
         <hr>
         
-        <table class="table table-sm table-striped">
+        <table class="table table-sm table-striped shadow-sm border">
             <thead>
                     <th>Código</th>
                     <th>Nome</th>

@@ -11,7 +11,7 @@ $tblFornecedor = mysqli_fetch_array($rsFornecedor); //abrindo o resultset para e
 
 <div class="row">
     <div class="col-lg-2">
-        <img src="img/user.jpg" class="img-thumbnail">
+        <img src="img/img-supplier.png" class="img-thumbnail">
     </div>
 
     <div class="col-lg-10">
@@ -40,7 +40,7 @@ $tblFornecedor = mysqli_fetch_array($rsFornecedor); //abrindo o resultset para e
 
         <hr>
         
-        <table class="table table-sm table-striped">
+        <table class="table table-sm table-striped shadow-sm border">
             <thead>
                     <th>Código</th>
                     <th>Nome</th>

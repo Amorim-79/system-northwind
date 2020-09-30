@@ -40,7 +40,7 @@ $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibiç
 
         <hr>
         
-        <table class="table table-sm table-striped">
+        <table class="table table-sm table-striped shadow-sm border">
             <thead>
                     <th>Cód. Venda</th>
                     <th>Data</th>

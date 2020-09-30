@@ -9,13 +9,13 @@ while($campos = mysqli_fetch_array($rsCampos)){
 
 ?>
 
-<h5><?=strtoupper($tabela);?></h5>
+<h5 class="text-center mt-2 font-weight-bold"><?=strtoupper($tabela);?></h5>
 <hr>
 <a href="?idPg=<?=$idPg + 2;?>">
     <i class="fa fa-md fa-plus-square"></i>
     Adicionar Novo
 </a>
-<table class="table-sm table-striped">
+<table class="table-sm table-striped border shadow-sm rounded mt-2 mb-3">
 
     <thead class="table-dark">
         <tr>

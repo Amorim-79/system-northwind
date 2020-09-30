@@ -16,16 +16,16 @@
     
     <body>
         <!-- Conteudo da página -->
-        <div class="container border">
+        <div class="container border shadow-sm">
             
             <div class="row"> <!-- 1ºLinha -->
                 <div class="col-lg-12">
-                    <img src="img/banner.jpg" class="img-thumbnail">
+                    <img src="img/banner.jpg" class="img-thumbnail shadow-sm">
                 </div>
             </div>
             
             <div class="row justify-content-md-center"> <!-- 2ºLinha -->
-                <div class="col-lg-5 border" id="DivFormLogin">
+                <div class="col-lg-5 border shadow-sm" id="DivFormLogin">
                     
                         <form action="Login.php" method="post">
                         <h5>Preencha os dados abaixo para efetuar login</h5>                        
@@ -49,7 +49,7 @@
             <div class="row"> <!-- 3ºLinha -->
                 <div class="col-lg-4 DivCards">
                     
-                    <div class="card">
+                    <div class="card shadow-sm">
                         <img src="img/pessoas.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             PESSOAS
@@ -69,7 +69,7 @@
                 </div>
                 
                 <div class="col-lg-4 DivCards">
-                    <div class="card">
+                    <div class="card shadow-sm">
                         <img src="img/produtos.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             PRODUTOS
@@ -87,7 +87,7 @@
                 </div>
                 
                 <div class="col-lg-4 DivCards">
-                    <div class="card">
+                    <div class="card shadow-sm">
                         <img src="img/vendas.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             VENDAS

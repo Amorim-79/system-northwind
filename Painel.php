@@ -26,7 +26,7 @@
                 <div class="row"> <!--1º LINHA (row) -->
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/clientes.jpg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/funcionarios.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/fornecedores.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -142,7 +142,7 @@
                 <div class="row" style="margin-top:15px;"> <!--2º LINHA (row) -->
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/transportadoras.jpeg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -178,7 +178,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/produtos.jpg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -214,7 +214,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <div class="card shadow-sm">
                             <img src="img/vendas.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">

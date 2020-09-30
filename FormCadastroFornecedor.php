@@ -1,6 +1,6 @@
 
 
-<form action="CadastroDados.php" method="post">
+<form action="CadastroDados.php" method="post" class="border shadow-sm p-4 mt-4">
     <div class="row LinhaForm">
         <div class="col-lg-12">
             <label>Nome da Empresa: </label>

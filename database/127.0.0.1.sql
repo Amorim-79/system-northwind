@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: Ago 29, 2020 as 01:16 AM
+-- Tempo de Geração: Out 05, 2020 as 02:13 AM
 -- Versão do Servidor: 5.1.54
 -- Versão do PHP: 5.3.5
 
@@ -18,8 +18,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Banco de Dados: `northwind`
 --
-CREATE DATABASE `northwind` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `northwind`;
 
 -- --------------------------------------------------------
 
@@ -3246,7 +3244,7 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `EmployeeID`, `OrderDate`, `Requi
 (11005, 'WILMK', 2, '1998-04-07 00:00:00', '1998-05-05 00:00:00', '1998-04-10 00:00:00', 1, 0.7500, 'Wilman Kala', 'Keskuskatu 45', 'Helsinki', NULL, '21240', 'Finland'),
 (11006, 'GREAL', 3, '1998-04-07 00:00:00', '1998-05-05 00:00:00', '1998-04-15 00:00:00', 2, 25.1900, 'Great Lakes Food Market', '2732 Baker Blvd.', 'Eugene', 'OR', '97403', 'USA'),
 (11007, 'PRINI', 8, '1998-04-08 00:00:00', '1998-05-06 00:00:00', '1998-04-13 00:00:00', 2, 202.2400, 'Princesa Isabel Vinhos', 'Estrada da sade n. 58', 'Lisboa', NULL, '1756', 'Portugal'),
-(11008, 'ERNSH', 7, '1998-04-08 00:00:00', '1998-05-06 00:00:00', NULL, 3, 79.4600, 'Ernst Handel', 'Kirchgasse 6', 'Graz', NULL, '8010', 'Austria'),
+(11008, 'ERNSH', 7, '1998-04-08 00:00:00', '1998-05-06 00:00:00', '1996-07-10 00:00:00', 3, 79.4600, 'Ernst Handel', 'Kirchgasse 6', 'Graz', NULL, '8010', 'Austria'),
 (11009, 'GODOS', 2, '1998-04-08 00:00:00', '1998-05-06 00:00:00', '1998-04-10 00:00:00', 1, 59.1100, 'Godos Cocina Tpica', 'C/ Romero, 33', 'Sevilla', NULL, '41101', 'Spain'),
 (11010, 'REGGC', 2, '1998-04-09 00:00:00', '1998-05-07 00:00:00', '1998-04-21 00:00:00', 2, 28.7100, 'Reggiani Caseifici', 'Strada Provinciale 124', 'Reggio Emilia', NULL, '42100', 'Italy'),
 (11011, 'ALFKI', 3, '1998-04-09 00:00:00', '1998-05-07 00:00:00', '1998-04-13 00:00:00', 1, 1.2100, 'Alfred-s Futterkiste', 'Obere Str. 57', 'Berlin', NULL, '12209', 'Germany'),
@@ -3257,7 +3255,7 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `EmployeeID`, `OrderDate`, `Requi
 (11016, 'AROUT', 9, '1998-04-10 00:00:00', '1998-05-08 00:00:00', '1998-04-13 00:00:00', 2, 33.8000, 'Around the Horn', 'Brook Farm Stratford St. Mary', 'Colchester', 'Essex', 'CO7 6JX', 'UK'),
 (11017, 'ERNSH', 9, '1998-04-13 00:00:00', '1998-05-11 00:00:00', '1998-04-20 00:00:00', 2, 754.2600, 'Ernst Handel', 'Kirchgasse 6', 'Graz', NULL, '8010', 'Austria'),
 (11018, 'LONEP', 4, '1998-04-13 00:00:00', '1998-05-11 00:00:00', '1998-04-16 00:00:00', 2, 11.6500, 'Lonesome Pine Restaurant', '89 Chiaroscuro Rd.', 'Portland', 'OR', '97219', 'USA'),
-(11019, 'RANCH', 6, '1998-04-13 00:00:00', '1998-05-11 00:00:00', NULL, 3, 3.1700, 'Rancho grande', 'Av. del Libertador 900', 'Buenos Aires', NULL, '1010', 'Argentina'),
+(11019, 'RANCH', 6, '1998-04-13 00:00:00', '1998-05-11 00:00:00', '1996-07-10 00:00:00', 3, 3.1700, 'Rancho grande', 'Av. del Libertador 900', 'Buenos Aires', NULL, '1010', 'Argentina'),
 (11020, 'OTTIK', 2, '1998-04-14 00:00:00', '1998-05-12 00:00:00', '1998-04-16 00:00:00', 2, 43.3000, 'Ottilies Kseladen', 'Mehrheimerstr. 369', 'Kln', NULL, '50739', 'Germany'),
 (11021, 'QUICK', 3, '1998-04-14 00:00:00', '1998-05-12 00:00:00', '1998-04-21 00:00:00', 1, 297.1800, 'QUICK-Stop', 'Taucherstrae 10', 'Cunewalde', NULL, '1307', 'Germany'),
 (11022, 'HANAR', 9, '1998-04-14 00:00:00', '1998-05-12 00:00:00', '1998-05-04 00:00:00', 2, 6.2700, 'Hanari Carnes', 'Rua do Pao, 67', 'Rio de Janeiro', 'RJ', '05454-876', 'Brazil'),
@@ -3277,46 +3275,46 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `EmployeeID`, `OrderDate`, `Requi
 (11036, 'DRACD', 8, '1998-04-20 00:00:00', '1998-05-18 00:00:00', '1998-04-22 00:00:00', 3, 149.4700, 'Drachenblut Delikatessen', 'Walserweg 21', 'Aachen', NULL, '52066', 'Germany'),
 (11037, 'GODOS', 7, '1998-04-21 00:00:00', '1998-05-19 00:00:00', '1998-04-27 00:00:00', 1, 3.2000, 'Godos Cocina Tpica', 'C/ Romero, 33', 'Sevilla', NULL, '41101', 'Spain'),
 (11038, 'SUPRD', 1, '1998-04-21 00:00:00', '1998-05-19 00:00:00', '1998-04-30 00:00:00', 2, 29.5900, 'Suprmes dlices', 'Boulevard Tirou, 255', 'Charleroi', NULL, 'B-6000', 'Belgium'),
-(11039, 'LINOD', 1, '1998-04-21 00:00:00', '1998-05-19 00:00:00', NULL, 2, 65.0000, 'LINO-Delicateses', 'Ave. 5 de Mayo Porlamar', 'I. de Margarita', 'Nueva Esparta', '4980', 'Venezuela'),
-(11040, 'GREAL', 4, '1998-04-22 00:00:00', '1998-05-20 00:00:00', NULL, 3, 18.8400, 'Great Lakes Food Market', '2732 Baker Blvd.', 'Eugene', 'OR', '97403', 'USA'),
+(11039, 'LINOD', 1, '1998-04-21 00:00:00', '1998-05-19 00:00:00', '1998-04-30 00:00:00', 2, 65.0000, 'LINO-Delicateses', 'Ave. 5 de Mayo Porlamar', 'I. de Margarita', 'Nueva Esparta', '4980', 'Venezuela'),
+(11040, 'GREAL', 4, '1998-04-22 00:00:00', '1998-05-20 00:00:00', '1996-07-10 00:00:00', 3, 18.8400, 'Great Lakes Food Market', '2732 Baker Blvd.', 'Eugene', 'OR', '97403', 'USA'),
 (11041, 'CHOPS', 3, '1998-04-22 00:00:00', '1998-05-20 00:00:00', '1998-04-28 00:00:00', 2, 48.2200, 'Chop-suey Chinese', 'Hauptstr. 31', 'Bern', NULL, '3012', 'Switzerland'),
 (11042, 'COMMI', 2, '1998-04-22 00:00:00', '1998-05-06 00:00:00', '1998-05-01 00:00:00', 1, 29.9900, 'Comrcio Mineiro', 'Av. dos Lusadas, 23', 'Sao Paulo', 'SP', '05432-043', 'Brazil'),
 (11043, 'SPECD', 5, '1998-04-22 00:00:00', '1998-05-20 00:00:00', '1998-04-29 00:00:00', 2, 8.8000, 'Spcialits du monde', '25, rue Lauriston', 'Paris', NULL, '75016', 'France'),
 (11044, 'WOLZA', 4, '1998-04-23 00:00:00', '1998-05-21 00:00:00', '1998-05-01 00:00:00', 1, 8.7200, 'Wolski Zajazd', 'ul. Filtrowa 68', 'Warszawa', NULL, '01-012', 'Poland'),
-(11045, 'BOTTM', 6, '1998-04-23 00:00:00', '1998-05-21 00:00:00', NULL, 2, 70.5800, 'Bottom-Dollar Markets', '23 Tsawassen Blvd.', 'Tsawassen', 'BC', 'T2F 8M4', 'Canada'),
+(11045, 'BOTTM', 6, '1998-04-23 00:00:00', '1998-05-21 00:00:00', '1996-07-10 00:00:00', 2, 70.5800, 'Bottom-Dollar Markets', '23 Tsawassen Blvd.', 'Tsawassen', 'BC', 'T2F 8M4', 'Canada'),
 (11046, 'WANDK', 8, '1998-04-23 00:00:00', '1998-05-21 00:00:00', '1998-04-24 00:00:00', 2, 71.6400, 'Die Wandernde Kuh', 'Adenauerallee 900', 'Stuttgart', NULL, '70563', 'Germany'),
 (11047, 'EASTC', 7, '1998-04-24 00:00:00', '1998-05-22 00:00:00', '1998-05-01 00:00:00', 3, 46.6200, 'Eastern Connection', '35 King George', 'London', NULL, 'WX3 6FW', 'UK'),
 (11048, 'BOTTM', 7, '1998-04-24 00:00:00', '1998-05-22 00:00:00', '1998-04-30 00:00:00', 3, 24.1200, 'Bottom-Dollar Markets', '23 Tsawassen Blvd.', 'Tsawassen', 'BC', 'T2F 8M4', 'Canada'),
 (11049, 'GOURL', 3, '1998-04-24 00:00:00', '1998-05-22 00:00:00', '1998-05-04 00:00:00', 1, 8.3400, 'Gourmet Lanchonetes', 'Av. Brasil, 442', 'Campinas', 'SP', '04876-786', 'Brazil'),
 (11050, 'FOLKO', 8, '1998-04-27 00:00:00', '1998-05-25 00:00:00', '1998-05-05 00:00:00', 2, 59.4100, 'Folk och f HB', 'kergatan 24', 'Brcke', NULL, 'S-844 67', 'Sweden'),
-(11051, 'LAMAI', 7, '1998-04-27 00:00:00', '1998-05-25 00:00:00', NULL, 3, 2.7900, 'La maison d-Asie', '1 rue Alsace-Lorraine', 'Toulouse', NULL, '31000', 'France'),
+(11051, 'LAMAI', 7, '1998-04-27 00:00:00', '1998-05-25 00:00:00', '1996-07-10 00:00:00', 3, 2.7900, 'La maison d-Asie', '1 rue Alsace-Lorraine', 'Toulouse', NULL, '31000', 'France'),
 (11052, 'HANAR', 3, '1998-04-27 00:00:00', '1998-05-25 00:00:00', '1998-05-01 00:00:00', 1, 67.2600, 'Hanari Carnes', 'Rua do Pao, 67', 'Rio de Janeiro', 'RJ', '05454-876', 'Brazil'),
 (11053, 'PICCO', 2, '1998-04-27 00:00:00', '1998-05-25 00:00:00', '1998-04-29 00:00:00', 2, 53.0500, 'Piccolo und mehr', 'Geislweg 14', 'Salzburg', NULL, '5020', 'Austria'),
-(11054, 'CACTU', 8, '1998-04-28 00:00:00', '1998-05-26 00:00:00', NULL, 1, 0.3300, 'Cactus Comidas para llevar', 'Cerrito 333', 'Buenos Aires', NULL, '1010', 'Argentina'),
+(11054, 'CACTU', 8, '1998-04-28 00:00:00', '1998-05-26 00:00:00', '1996-07-10 00:00:00', 1, 0.3300, 'Cactus Comidas para llevar', 'Cerrito 333', 'Buenos Aires', NULL, '1010', 'Argentina'),
 (11055, 'HILAA', 7, '1998-04-28 00:00:00', '1998-05-26 00:00:00', '1998-05-05 00:00:00', 2, 120.9200, 'HILARION-Abastos', 'Carrera 22 con Ave. Carlos Soublette #8-35', 'San Cristbal', 'Tchira', '5022', 'Venezuela'),
 (11056, 'EASTC', 8, '1998-04-28 00:00:00', '1998-05-12 00:00:00', '1998-05-01 00:00:00', 2, 278.9600, 'Eastern Connection', '35 King George', 'London', NULL, 'WX3 6FW', 'UK'),
 (11057, 'NORTS', 3, '1998-04-29 00:00:00', '1998-05-27 00:00:00', '1998-05-01 00:00:00', 3, 4.1300, 'North/South', 'South House 300 Queensbridge', 'London', NULL, 'SW7 1RZ', 'UK'),
-(11058, 'BLAUS', 9, '1998-04-29 00:00:00', '1998-05-27 00:00:00', NULL, 3, 31.1400, 'Blauer See Delikatessen', 'Forsterstr. 57', 'Mannheim', NULL, '68306', 'Germany'),
-(11059, 'RICAR', 2, '1998-04-29 00:00:00', '1998-06-10 00:00:00', NULL, 2, 85.8000, 'Ricardo Adocicados', 'Av. Copacabana, 267', 'Rio de Janeiro', 'RJ', '02389-890', 'Brazil'),
+(11058, 'BLAUS', 9, '1998-04-29 00:00:00', '1998-05-27 00:00:00', '1996-07-10 00:00:00', 3, 31.1400, 'Blauer See Delikatessen', 'Forsterstr. 57', 'Mannheim', NULL, '68306', 'Germany'),
+(11059, 'RICAR', 2, '1998-04-29 00:00:00', '1998-06-10 00:00:00', '1996-07-10 00:00:00', 2, 85.8000, 'Ricardo Adocicados', 'Av. Copacabana, 267', 'Rio de Janeiro', 'RJ', '02389-890', 'Brazil'),
 (11060, 'FRANS', 2, '1998-04-30 00:00:00', '1998-05-28 00:00:00', '1998-05-04 00:00:00', 2, 10.9800, 'Franchi S.p.A.', 'Via Monte Bianco 34', 'Torino', NULL, '10100', 'Italy'),
-(11061, 'GREAL', 4, '1998-04-30 00:00:00', '1998-06-11 00:00:00', NULL, 3, 14.0100, 'Great Lakes Food Market', '2732 Baker Blvd.', 'Eugene', 'OR', '97403', 'USA'),
-(11062, 'REGGC', 4, '1998-04-30 00:00:00', '1998-05-28 00:00:00', NULL, 2, 29.9300, 'Reggiani Caseifici', 'Strada Provinciale 124', 'Reggio Emilia', NULL, '42100', 'Italy'),
+(11061, 'GREAL', 4, '1998-04-30 00:00:00', '1998-06-11 00:00:00', '1996-07-10 00:00:00', 3, 14.0100, 'Great Lakes Food Market', '2732 Baker Blvd.', 'Eugene', 'OR', '97403', 'USA'),
+(11062, 'REGGC', 4, '1998-04-30 00:00:00', '1998-05-28 00:00:00', '1996-07-10 00:00:00', 2, 29.9300, 'Reggiani Caseifici', 'Strada Provinciale 124', 'Reggio Emilia', NULL, '42100', 'Italy'),
 (11063, 'HUNGO', 3, '1998-04-30 00:00:00', '1998-05-28 00:00:00', '1998-05-06 00:00:00', 2, 81.7300, 'Hungry Owl All-Night Grocers', '8 Johnstown Road', 'Cork', 'Co. Cork', NULL, 'Ireland'),
 (11064, 'SAVEA', 1, '1998-05-01 00:00:00', '1998-05-29 00:00:00', '1998-05-04 00:00:00', 1, 30.0900, 'Save-a-lot Markets', '187 Suffolk Ln.', 'Boise', 'ID', '83720', 'USA'),
-(11065, 'LILAS', 8, '1998-05-01 00:00:00', '1998-05-29 00:00:00', NULL, 1, 12.9100, 'LILA-Supermercado', 'Carrera 52 con Ave. Bolvar #65-98 Llano Largo', 'Barquisimeto', 'Lara', '3508', 'Venezuela'),
+(11065, 'LILAS', 8, '1998-05-01 00:00:00', '1998-05-29 00:00:00', '1996-07-10 00:00:00', 1, 12.9100, 'LILA-Supermercado', 'Carrera 52 con Ave. Bolvar #65-98 Llano Largo', 'Barquisimeto', 'Lara', '3508', 'Venezuela'),
 (11066, 'WHITC', 7, '1998-05-01 00:00:00', '1998-05-29 00:00:00', '1998-05-04 00:00:00', 2, 44.7200, 'White Clover Markets', '1029 - 12th Ave. S.', 'Seattle', 'WA', '98124', 'USA'),
 (11067, 'DRACD', 1, '1998-05-04 00:00:00', '1998-05-18 00:00:00', '1998-05-06 00:00:00', 2, 7.9800, 'Drachenblut Delikatessen', 'Walserweg 21', 'Aachen', NULL, '52066', 'Germany'),
-(11068, 'QUEEN', 8, '1998-05-04 00:00:00', '1998-06-01 00:00:00', NULL, 2, 81.7500, 'Queen Cozinha', 'Alameda dos Canrios, 891', 'Sao Paulo', 'SP', '05487-020', 'Brazil'),
-(11069, 'TORTU', 1, '1998-05-04 00:00:00', '1998-06-01 00:00:00', '1998-05-06 00:00:00', 2, 15.6700, 'Tortuga Restaurante', 'Avda. Azteca 123', 'Mxico D.F.', NULL, '5033', 'Mexico'),
-(11070, 'LEHMS', 2, '1998-05-05 00:00:00', '1998-06-02 00:00:00', NULL, 1, 136.0000, 'Lehmanns Marktstand', 'Magazinweg 7', 'Frankfurt a.M.', NULL, '60528', 'Germany');
+(11068, 'QUEEN', 8, '1998-05-04 00:00:00', '1998-06-01 00:00:00', '1996-07-10 00:00:00', 2, 81.7500, 'Queen Cozinha', 'Alameda dos Canrios, 891', 'Sao Paulo', 'SP', '05487-020', 'Brazil');
 INSERT INTO `orders` (`OrderID`, `CustomerID`, `EmployeeID`, `OrderDate`, `RequiredDate`, `ShippedDate`, `ShipVia`, `Freight`, `ShipName`, `ShipAddress`, `ShipCity`, `ShipRegion`, `ShipPostalCode`, `ShipCountry`) VALUES
-(11071, 'LILAS', 1, '1998-05-05 00:00:00', '1998-06-02 00:00:00', NULL, 1, 0.9300, 'LILA-Supermercado', 'Carrera 52 con Ave. Bolvar #65-98 Llano Largo', 'Barquisimeto', 'Lara', '3508', 'Venezuela'),
-(11072, 'ERNSH', 4, '1998-05-05 00:00:00', '1998-06-02 00:00:00', NULL, 2, 258.6400, 'Ernst Handel', 'Kirchgasse 6', 'Graz', NULL, '8010', 'Austria'),
-(11073, 'PERIC', 2, '1998-05-05 00:00:00', '1998-06-02 00:00:00', NULL, 2, 24.9500, 'Pericles Comidas clsicas', 'Calle Dr. Jorge Cash 321', 'Mxico D.F.', NULL, '5033', 'Mexico'),
-(11074, 'SIMOB', 7, '1998-05-06 00:00:00', '1998-06-03 00:00:00', NULL, 2, 18.4400, 'Simons bistro', 'Vinbltet 34', 'Kobenhavn', NULL, '1734', 'Denmark'),
-(11075, 'RICSU', 8, '1998-05-06 00:00:00', '1998-06-03 00:00:00', NULL, 2, 6.1900, 'Richter Supermarkt', 'Starenweg 5', 'Genve', NULL, '1204', 'Switzerland'),
-(11076, 'BONAP', 4, '1998-05-06 00:00:00', '1998-06-03 00:00:00', NULL, 2, 38.2800, 'Bon app-', '12, rue des Bouchers', 'Marseille', NULL, '13008', 'France'),
-(11077, 'RATTC', 1, '1998-05-06 00:00:00', '1998-06-03 00:00:00', NULL, 2, 8.5300, 'Rattlesnake Canyon Grocery', '2817 Milton Dr.', 'Albuquerque', 'NM', '87110', 'USA');
+(11069, 'TORTU', 1, '1998-05-04 00:00:00', '1998-06-01 00:00:00', '1998-05-06 00:00:00', 2, 15.6700, 'Tortuga Restaurante', 'Avda. Azteca 123', 'Mxico D.F.', NULL, '5033', 'Mexico'),
+(11070, 'LEHMS', 2, '1998-05-05 00:00:00', '1998-06-02 00:00:00', '1996-07-10 00:00:00', 1, 136.0000, 'Lehmanns Marktstand', 'Magazinweg 7', 'Frankfurt a.M.', NULL, '60528', 'Germany'),
+(11071, 'LILAS', 1, '1998-05-05 00:00:00', '1998-06-02 00:00:00', '1996-07-10 00:00:00', 1, 0.9300, 'LILA-Supermercado', 'Carrera 52 con Ave. Bolvar #65-98 Llano Largo', 'Barquisimeto', 'Lara', '3508', 'Venezuela'),
+(11072, 'ERNSH', 4, '1998-05-05 00:00:00', '1998-06-02 00:00:00', '1996-07-10 00:00:00', 2, 258.6400, 'Ernst Handel', 'Kirchgasse 6', 'Graz', NULL, '8010', 'Austria'),
+(11073, 'PERIC', 2, '1998-05-05 00:00:00', '1998-06-02 00:00:00', '1996-07-10 00:00:00', 2, 24.9500, 'Pericles Comidas clsicas', 'Calle Dr. Jorge Cash 321', 'Mxico D.F.', NULL, '5033', 'Mexico'),
+(11074, 'SIMOB', 7, '1998-05-06 00:00:00', '1998-06-03 00:00:00', '1996-07-10 00:00:00', 2, 18.4400, 'Simons bistro', 'Vinbltet 34', 'Kobenhavn', NULL, '1734', 'Denmark'),
+(11075, 'RICSU', 8, '1998-05-06 00:00:00', '1998-06-03 00:00:00', '1996-07-10 00:00:00', 2, 6.1900, 'Richter Supermarkt', 'Starenweg 5', 'Genve', NULL, '1204', 'Switzerland'),
+(11076, 'BONAP', 4, '1998-05-06 00:00:00', '1998-06-03 00:00:00', '1996-07-10 00:00:00', 2, 38.2800, 'Bon app-', '12, rue des Bouchers', 'Marseille', NULL, '13008', 'France'),
+(11077, 'RATTC', 1, '1998-05-06 00:00:00', '1998-06-03 00:00:00', '1996-07-10 00:00:00', 2, 8.5300, 'Rattlesnake Canyon Grocery', '2817 Milton Dr.', 'Albuquerque', 'NM', '87110', 'USA');
 
 -- --------------------------------------------------------
 

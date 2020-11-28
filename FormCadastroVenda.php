@@ -3,7 +3,7 @@ $rsClientes = listarRegistros($vConn, "Customers");
 $rsFuncionarios = listarRegistros($vConn, "Employees");
 ?>
 
-<form action="CadastroDados.php" method="post" class="border shadow-sm p-4 mt-4">
+<form action="CadastroDados.php" method="post">
     <div class="row LinhaForm">
         <div class="col-lg-6">
             <label>Cliente: </label>

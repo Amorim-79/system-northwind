@@ -1,9 +1,7 @@
 <?php
-$id = $_GET['id']; //objeto GET acessa o valor de uma variavel passada via URL
-$tbl = $_GET['tbl']; //objeto GET acessa o valor de uma variavel passada via URL
-$column = $_GET['column']; //objeto GET acessa o valor de uma variavel passada via URL
+$id = $_GET['idReg']; //objeto GET acessa o valor de uma variavel passada via URL
 
-$rsFornecedor = consultarPorId($vConn, $tbl, $column, $id); //chamando metodo que retorna dados do Fornecedor selecionado
+$rsFornecedor = consultarPorFornecedor($vConn, $id); //chamando metodo que retorna dados do Fornecedor selecionado
 $rsProduto = listarProdutosFornecedor($vConn, $id); //chamando metodo que retorna dados do Fornecedor selecionado
 
 $tblFornecedor = mysqli_fetch_array($rsFornecedor); //abrindo o resultset para exibição dos dados
@@ -11,7 +9,7 @@ $tblFornecedor = mysqli_fetch_array($rsFornecedor); //abrindo o resultset para e
 
 <div class="row">
     <div class="col-lg-2">
-        <img src="img/img-supplier.png" class="img-thumbnail">
+        <img src="img/user.jpg" class="img-thumbnail">
     </div>
 
     <div class="col-lg-10">
@@ -40,7 +38,7 @@ $tblFornecedor = mysqli_fetch_array($rsFornecedor); //abrindo o resultset para e
 
         <hr>
         
-        <table class="table table-sm table-striped shadow-sm border">
+        <table class="table table-sm table-striped">
             <thead>
                     <th>Código</th>
                     <th>Nome</th>

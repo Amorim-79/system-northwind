@@ -8,14 +8,15 @@ while($campos = mysqli_fetch_array($rsCampos)){
 }
 
 ?>
-
-<h5 class="text-center mt-2 font-weight-bold"><?=strtoupper($tabela);?></h5>
+<br>
+<img src="img/b<?=$tabela?>.jpg" class="img-fluid">
 <hr>
-<a href="?idPg=<?=$idPg + 2;?>">
+<a href="?idPg=<?=$idPg + 2;?>&acao=1" class="float-right">
     <i class="fa fa-md fa-plus-square"></i>
     Adicionar Novo
 </a>
-<table class="table-sm table-striped border shadow-sm rounded mt-2 mb-3">
+<br>
+<table class="table-sm table-striped" align="center" width="100%">
 
     <thead class="table-dark">
         <tr>
@@ -23,14 +24,15 @@ while($campos = mysqli_fetch_array($rsCampos)){
         
         $cont = 0;
         foreach($nomeCampos as $valor){ 
-            if($cont < 10){
+            if($cont < 13){
         ?>
-            <th><?=$valor;?></th>
+            <th class="TopoTabela"><center><?=$valor;?></center></th>
         <?php 
             } //fechando if
         $cont++;
         } //fechando for
         ?>
+            <th colspan="2" class="TopoTabela">Ações</th>
         </tr>
     </thead>
     
@@ -41,24 +43,45 @@ while($campos = mysqli_fetch_array($rsCampos)){
         <tr>
             <?php 
             for($i=0; $i<$numCampos; $i++){ 
-                if ($i < 10){
+                if ($i < 13){
                     if($i <= 1){ //duas primeiras col (0 e 1)
+                        
+                        
+                        $cor="";
+                        
+                        if($idPg==10){
+                            $rsVendas = listarVendas($vConn, $dadosLista[0]);
+                            
+                            if(mysqli_num_rows($rsVendas) == 0) $cor = "#FD9D90";
+                            else $cor = "";
+                        }
             ?>
-                <td>
-                    <a href="?idPg=<?=$idPg + 1;?>&tbl=<?=$tabela;?>&column=<?=$nomeCampos[0];?>&id=<?=$dadosLista[0];?>" class="LinkDados">
-                        <?=$dadosLista[$i];?>
+                <td bgcolor="<?=$cor?>" align="center">
+                    <a href="?idPg=<?=$idPg + 1;?>&idReg=<?=$dadosLista[0];?>">
+                        <font class="LinkDados"><?=$dadosLista[$i];?>
                     </a>
                 </td>
             
             <?php } else { ?>
             
-            <td><font class="TextoDados"><?=$dadosLista[$i];?></font></td>            
+            <td align="center"><font class="TextoDados"><?=$dadosLista[$i];?></font></td>            
             
             <?php
                     } //fechando if else interno
                 } //fechando if externo
             } //fechando for
             ?>
+            
+            <td>
+                <a href="?idPg=<?=$idPg + 2?>&acao=2&id=<?=$dadosLista[0]?>">
+                    <i class="fa fa-edit fa-sm"></i>
+                </a>
+            </td>
+            <td>
+                <a href="?idPg=<?=$idPg + 9?>&conf=0&id=<?=$dadosLista[0]?>">
+                    <i class="fa fa-trash fa-sm" style="color:red;"></i>
+                </a>
+            </td>
             
         </tr>
 

@@ -1,14 +1,13 @@
 <?php
-$id = $_GET['id']; //objeto GET acessa o valor de uma variavel passada via URL
-$tbl = $_GET['tbl']; //objeto GET acessa o valor de uma variavel passada via URL
-$column = $_GET['column']; //objeto GET acessa o valor de uma variavel passada via URL
+$id = $_GET['idReg']; //objeto GET acessa o valor de uma variavel passada via URL
 
-$rsFuncionario = consultarPorId($vConn, $tbl, $column, $id); //chamando metodo que retorna dados do Funcionario selecionado
+$rsFuncionario = consultarPorFuncionario($vConn, $id); //chamando metodo que retorna dados do Funcionario selecionado
 $rsVenda = listarVendasFuncionario($vConn, $id); //chamando metodo que retorna dados do Funcionario selecionado
 
 $tblFuncionario = mysqli_fetch_array($rsFuncionario); //abrindo o resultset para exibição dos dados
 ?>
-
+<img src="img/bemployees.jpg" class="img-fluid" style="margin-top:15px;">
+<hr>
 <div class="row">
     <div class="col-lg-2">
         <img src="img/user.jpg" class="img-thumbnail">
@@ -40,15 +39,19 @@ $tblFuncionario = mysqli_fetch_array($rsFuncionario); //abrindo o resultset para
 </div>
 
         <hr>
+        <center>
+            <u><h5 style="margin-top:15px;">Vendas Realizadas</h5></u>
+        </center>
+        <hr>
         
-        <table class="table table-sm table-striped shadow-sm border">
+        <table class="table table-sm table-striped">
             <thead>
-                    <th>Cód. Venda</th>
-                    <th>Data</th>
-                    <th>Entrega</th>
-                    <th>Valor Total</th>
-                    <th>Frete</th>
-                    <th>Transportadora</th>
+                    <th class="TopoTabela">Cód. Venda</th>
+                    <th class="TopoTabela">Data</th>
+                    <th class="TopoTabela">Entrega</th>
+                    <th class="TopoTabela">Valor Total</th>
+                    <th class="TopoTabela">Frete</th>
+                    <th class="TopoTabela">Transportadora</th>
                     
             </thead>
             <tbody>                
@@ -56,12 +59,12 @@ $tblFuncionario = mysqli_fetch_array($rsFuncionario); //abrindo o resultset para
                 while ($tblVenda = mysqli_fetch_array($rsVenda)) {
                     ?>
                     <tr>
-                        <td><?= $tblVenda['OrderID'] ?></td>            
-                        <td><?= corrigirData($tblVenda['OrderDate']) ?></td>
-                        <td><?= corrigirData($tblVenda['ShippedDate']) ?></td>
-                        <td>U$ <?=number_format(calcularCompra($vConn, $tblVenda['OrderID']),2) ?></td>
-                        <td>U$ <?= number_format($tblVenda['Freight'], 2) ?></td>
-                        <td><?= $tblVenda['CompanyName'] ?></td>
+                        <td class="TextoDados"><?= $tblVenda['OrderID'] ?></td>            
+                        <td class="TextoDados"><?= corrigirData($tblVenda['OrderDate']) ?></td>
+                        <td class="TextoDados"><?= corrigirData($tblVenda['ShippedDate']) ?></td>
+                        <td class="TextoDados">U$ <?=number_format(calcularCompra($vConn, $tblVenda['OrderID']),2) ?></td>
+                        <td class="TextoDados">U$ <?= number_format($tblVenda['Freight'], 2) ?></td>
+                        <td class="TextoDados"><?= $tblVenda['CompanyName'] ?></td>
                     </tr>
 
                 <?php } ?>

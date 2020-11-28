@@ -44,8 +44,8 @@ return $rsDados;
 
 /*----------------------------------------------------------------------------*/
 
-function consultarPorId($vConn, $tbl, $column, $id){
-    $sqlCliente = "Select * from $tbl where $column like '$id'";    
+function consultarCliente($vConn, $Id){
+    $sqlCliente = "Select * from customers where CustomerID like '$Id'";    
     $rsCliente = mysqli_query($vConn, $sqlCliente) or die(mysqli_error($vConn));
     
     return $rsCliente;
@@ -53,7 +53,34 @@ function consultarPorId($vConn, $tbl, $column, $id){
 
 /*----------------------------------------------------------------------------*/
 
-function listarVendasCliente($vConn, $id){
+function consultarPorFornecedor($vConn, $Id){
+    $sqlFornecedor = "Select * from suppliers where SupplierID like '$Id'";    
+    $rsFornecedor = mysqli_query($vConn, $sqlFornecedor) or die(mysqli_error($vConn));
+    
+    return $rsFornecedor;
+}
+
+/*----------------------------------------------------------------------------*/
+
+function consultarPorFuncionario($vConn, $Id){
+    $sqlFuncionario = "Select * from employees where EmployeeID like '$Id'";    
+    $rsFuncionario = mysqli_query($vConn, $sqlFuncionario) or die(mysqli_error($vConn));
+    
+    return $rsFuncionario;
+}
+
+/*----------------------------------------------------------------------------*/
+
+function consultarPorProduto($vConn, $Id){
+    $sqlProduto = "Select * from products where ProductID like '$Id'";    
+    $rsProduto = mysqli_query($vConn, $sqlProduto) or die(mysqli_error($vConn));
+    
+    return $rsProduto;
+}
+
+/*----------------------------------------------------------------------------*/
+
+function listarVendas($vConn, $id){
     $sqlVendas = "Select * from orders O, employees E, Shippers S where O.CustomerId like '$id' and O.EmployeeID = E.EmployeeID and O.ShipVia = S.ShipperID";    
     $rsVendas = mysqli_query($vConn, $sqlVendas) or die(mysqli_error($vConn));
     
@@ -99,14 +126,31 @@ function calcularCompra($vConn, $idVenda){
     return $tblTotal['total'];
     
 }
+/*----------------------------------------------------------------------------*/
+
+function listarItens($vConn, $idVenda){
+    $sqlItens = "select P.productID, P.ProductName, C.categoryName, OD.quantity, OD.UnitPrice, (OD.Quantity * OD.UnitPrice) as parcial
+                from Orders O, orderdetails OD, products P, categories C where 
+                O.orderid = $idVenda and O.OrderID = OD.OrderID and 
+                OD.ProductID = P.ProductID and P.CategoryID = C.CategoryID";
+    
+    $rsItens = mysqli_query($vConn, $sqlItens) or die(mysqli_error($vConn));
+    
+    return $rsItens;
+}
 
 /*----------------------------------------------------------------------------*/
 function corrigirData($tmpData){
+    
+    if($tmpData == NULL) {
+        return "";
+    }else{
  
-    $vData = explode("-", $tmpData);
-    $vDia = explode(" ", $vData[2]);
+        $vData = explode("-", $tmpData);
+        $vDia = explode(" ", $vData[2]);
     
-    return $vDia[0] . "/" . $vData[1] . "/" . $vData[0];  
-    
+        return $vDia[0] . "/" . $vData[1] . "/" . $vData[0];  
+    }
 }
 ?>
+

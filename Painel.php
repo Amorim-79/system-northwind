@@ -15,18 +15,26 @@
     </head>
 
     <body>
+        
+        <?php
+        
+            session_start();
+            
+            include "Seguranca.php";
+            include "NavMenu.php";
+        ?>
         <div class="container">
 
             <?php
             include "FuncoesDAO.php";
 
-            if (!isset($_GET['idPg'])) { //se a variavel URL idPg nao existir (monta a home)                
+            if (!isset($_GET['idPg'])) { //se a variavel URL idPg nao existir (monta a home)            
                 ?>
 
-                <div class="row"> <!--1º LINHA (row) -->
+                <div class="row" style="margin-top:10px;"> <!--1º LINHA (row) -->
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/clientes.jpg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -62,7 +70,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/funcionarios.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -100,7 +108,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/fornecedores.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -142,7 +150,7 @@
                 <div class="row" style="margin-top:15px;"> <!--2º LINHA (row) -->
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/transportadoras.jpeg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -178,7 +186,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/produtos.jpg" class="card-img-top">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -214,7 +222,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card">
                             <img src="img/vendas.jpg" class="card-img-top ">
                             <div class="card-body">
                                 <table class="table table-sm" align="center">
@@ -255,16 +263,18 @@
                 <?php
             } else { //se a variavel idPg existir
                 $idPg = $_GET['idPg'];
-
+                
                 if ($idPg == 10) {
-                    //Clientes
+                    //Clientes                    
                     $tabela = "customers";
                     include "Lista.php";
                 } else if($idPg == 11){
                     include "InfoCliente.php";
                 } else if ($idPg == 12){                    
                     include "FormCadastroCliente.php";
-                } else if ($idPg == 20) {
+                } else if($idPg == 19){
+                    include "ExcluiCliente.php";
+                } else if ($idPg == 20) {                    
                     //Funcionários
                     $tabela = "employees";
                     include "Lista.php";
@@ -287,7 +297,7 @@
                 } else if ($idPg == 42) {
                     include "FormCadastroTransportadora.php";
                 } else if ($idPg == 50) {
-                    //Estoque
+                    //Estoque                    
                     $tabela = "products";
                     include "Lista.php";
                 } else if ($idPg == 51) {

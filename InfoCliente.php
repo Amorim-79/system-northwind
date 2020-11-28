@@ -1,14 +1,15 @@
 <?php
-$id = $_GET['id']; //objeto GET acessa o valor de uma variavel passada via URL
-$tbl = $_GET['tbl']; //objeto GET acessa o valor de uma variavel passada via URL
-$column = $_GET['column']; //objeto GET acessa o valor de uma variavel passada via URL
+$idCli = $_GET['idReg']; //objeto GET acessa o valor de uma variavel passada via URL
 
-$rsCliente = consultarPorId($vConn, $tbl, $column, $id); //chamando metodo que retorna dados do cliente selecionado
-$rsVenda = listarVendasCliente($vConn, $id); //chamando metodo que retorna dados do cliente selecionado
+$rsCliente = consultarCliente($vConn, $idCli); //chamando metodo que retorna dados do cliente selecionado
+$rsVenda = listarVendas($vConn, $idCli); //chamando metodo que retorna dados do cliente selecionado
 
 $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibição dos dados
-?>
 
+$totalGasto = 0;
+?>
+<img src="img/bcustomers.jpg" class="img-fluid" style="margin-top:15px;">
+<hr>
 <div class="row">
     <div class="col-lg-2">
         <img src="img/user.jpg" class="img-thumbnail">
@@ -25,13 +26,14 @@ $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibiç
                 Representante: <?= $tblCliente['ContactName'] ?><br>
                 Cargo: <?= $tblCliente['ContactTitle'] ?><br>
                 Telefone: <?= $tblCliente['Phone'] ?><br>
-                Fax: <?= $tblCliente['Fax'] ?><br>
+                E-mail: <?= $tblCliente['Fax'] ?><br>
             </div>
 
             <div class="col-lg-6">
                 Endereço: <?= $tblCliente['Address'] ?><br>
                 Cidade: <?= $tblCliente['City'] ?><br>
                 País: <?= $tblCliente['Country'] ?><br>
+                CEP: <?= $tblCliente['PostalCode'] ?><br>
 
             </div>
         </div>
@@ -39,33 +41,67 @@ $tblCliente = mysqli_fetch_array($rsCliente); //abrindo o resultset para exibiç
 </div>
 
         <hr>
+        <center>
+            <u><h5 style="margin-top:15px;">Compras Efetuadas</h5></u>
+        </center>
+        <hr>
         
-        <table class="table table-sm table-striped shadow-sm border">
-            <thead>
-                    <th>Cód. Venda</th>
-                    <th>Data</th>
-                    <th>Entrega</th>
-                    <th>Valor Total</th>
-                    <th>Frete</th>
-                    <th>Transportadora</th>
-                    <th>Vendedor</th>
+        <div class="row">
+                    <div class="col-lg-2 TopoTabela">Cód. Venda</div>
+                    <div class="col-lg-1 TopoTabela">Data</div>
+                    <div class="col-lg-1 TopoTabela">Entrega</div>
+                    <div class="col-lg-2 TopoTabela">Valor Total</div>
+                    <div class="col-lg-2 TopoTabela">Frete</div>
+                    <div class="col-lg-2 TopoTabela">Transportadora</div>
+                    <div class="col-lg-2 TopoTabela">Vendedor</div>
                     
-            </thead>
-            <tbody>                
+        </div>
                 <?php
                 while ($tblVenda = mysqli_fetch_array($rsVenda)) {
+                    $idVenda = $tblVenda['OrderID'];
+                    $rsItens = listarItens($vConn,$idVenda);
+                    
+                    $totalGasto += calcularCompra($vConn, $idVenda);
                     ?>
-                    <tr>
-                        <td><?= $tblVenda['OrderID'] ?></td>            
-                        <td><?= corrigirData($tblVenda['OrderDate']) ?></td>
-                        <td><?= corrigirData($tblVenda['ShippedDate']) ?></td>
-                        <td>U$ <?=number_format(calcularCompra($vConn, $tblVenda['OrderID']),2) ?></td>
-                        <td>U$ <?= number_format($tblVenda['Freight'], 2) ?></td>
-                        <td><?= $tblVenda['CompanyName'] ?></td>
-                        <td><?= $tblVenda['FirstName'] . " " . $tblVenda['LastName'] ?></td>
+                    <div class="row border-top" style="padding-top:5px;padding-bottom:5px;">
+                        <div class="col-lg-2 TextoDados">
+                            <button class="BotaoDetalhes" onclick=""><?=$idVenda?></button>
+                        </div>            
+                        <div class="col-lg-1 TextoDados"><?= corrigirData($tblVenda['OrderDate']) ?></div>
+                        <div class="col-lg-1 TextoDados"><?= corrigirData($tblVenda['ShippedDate']) ?></div>
+                        <div class="col-lg-2 TextoDados">U$ <?=number_format(calcularCompra($vConn, $tblVenda['OrderID']),2) ?></div>
+                        <div class="col-lg-2 TextoDados">U$ <?= number_format($tblVenda['Freight'], 2) ?></div>
+                        <div class="col-lg-2 TextoDados"><?= $tblVenda['CompanyName'] ?></div>
+                        <div class="col-lg-2 TextoDados"><?= $tblVenda['FirstName'] . " " . $tblVenda['LastName'] ?></div>
 
-                    </tr>
-
-                <?php } ?>
-            </tbody>
-        </table>
+                    </div>
+        
+                <div id=""> 
+                    <div class="row" style="background-color:rgba(99,184,255,1);">
+                        <div class="col-lg-2 TopoTabela">Cód. Prod.</div>
+                        <div class="col-lg-2 TopoTabela">Nome Produto</div>
+                        <div class="col-lg-2 TopoTabela">Categoria</div>
+                        <div class="col-lg-2 TopoTabela">Quantidade</div>
+                        <div class="col-lg-2 TopoTabela">Valor Unit.</div>
+                        <div class="col-lg-2 TopoTabela">Valor Parc.</div>
+                    </div> 
+                <?php
+                    while($tblItens = mysqli_fetch_array($rsItens)){ ?>
+                    <div class="row" style="background-color:rgba(176,225,255,1);">
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['productID']?></div>
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['ProductName']?></div>
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['categoryName']?></div>
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['quantity']?></div>
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['UnitPrice']?></div>
+                        <div class="col-lg-2 TextoDados"><?=$tblItens['parcial']?></div>
+                    </div> 
+                                     
+                <?php }?>
+                </div>
+            <?php } ?>
+        
+        
+        <hr>
+        <div class="float-right">
+            <h5>Total em Compras: R$ <?=number_format($totalGasto,2);?>
+        </div>

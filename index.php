@@ -16,16 +16,16 @@
     
     <body>
         <!-- Conteudo da página -->
-        <div class="container border shadow-sm">
+        <div class="container border">
             
             <div class="row"> <!-- 1ºLinha -->
                 <div class="col-lg-12">
-                    <img src="img/banner.jpg" class="img-thumbnail shadow-sm">
+                    <img src="img/banner.jpg" class="img-thumbnail">
                 </div>
             </div>
             
             <div class="row justify-content-md-center"> <!-- 2ºLinha -->
-                <div class="col-lg-5 border shadow-sm" id="DivFormLogin">
+                <div class="col-lg-5 border" id="DivFormLogin">
                     
                         <form action="Login.php" method="post">
                         <h5>Preencha os dados abaixo para efetuar login</h5>                        
@@ -49,7 +49,7 @@
             <div class="row"> <!-- 3ºLinha -->
                 <div class="col-lg-4 DivCards">
                     
-                    <div class="card shadow-sm">
+                    <div class="card">
                         <img src="img/pessoas.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             PESSOAS
@@ -61,15 +61,12 @@
                                 
                             </p>
                            
-                        </div>
-                        <div class="card-footer">
-                            Saiba mais(+)
-                        </div>                        
+                        </div>                                          
                     </div>    
                 </div>
                 
                 <div class="col-lg-4 DivCards">
-                    <div class="card shadow-sm">
+                    <div class="card">
                         <img src="img/produtos.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             PRODUTOS
@@ -79,15 +76,12 @@
                                 Manipulação de estoque, fornecedores e gerenciamento
                                 de dados de produtos.
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            Saiba mais(+)
                         </div>                        
                     </div>
                 </div>
                 
                 <div class="col-lg-4 DivCards">
-                    <div class="card shadow-sm">
+                    <div class="card">
                         <img src="img/vendas.jpg" class="card-img-top">
                         <div class="card-header bg-dark text-white">
                             VENDAS
@@ -98,9 +92,7 @@
                                 armazenamento de valores em caixa.
                             </p>
                         </div>
-                        <div class="card-footer">
-                            Saiba mais(+)
-                        </div>                        
+                        
                     </div>
                 </div>                
             </div>            
